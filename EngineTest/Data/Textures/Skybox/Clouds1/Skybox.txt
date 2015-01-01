@@ -1,0 +1,7 @@
+[Skybox_Data]
+../Data/Textures/Skybox/Clouds1/skyboxFront.png
+../Data/Textures/Skybox/Clouds1/skyboxTop.png
+../Data/Textures/Skybox/Clouds1/skyboxBottom.png
+../Data/Textures/Skybox/Clouds1/skyboxRight.png
+../Data/Textures/Skybox/Clouds1/skyboxLeft.png
+../Data/Textures/Skybox/Clouds1/skyboxBack.png
