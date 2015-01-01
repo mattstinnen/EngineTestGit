@@ -1,7 +1,0 @@
-[Skybox_Data]
-../Data/Textures/Skybox/City1/skyboxFront.png
-../Data/Textures/Skybox/City1/skyboxTop.png
-../Data/Textures/Skybox/City1/skyboxBottom.png
-../Data/Textures/Skybox/City1/skyboxRight.png
-../Data/Textures/Skybox/City1/skyboxLeft.png
-../Data/Textures/Skybox/City1/skyboxBack.png

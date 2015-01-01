@@ -1,7 +1,0 @@
-[Skybox_Data]
-../Data/Textures/Skybox/Test/skyboxTest.png
-../Data/Textures/Skybox/Test/skyboxTest.png
-../Data/Textures/Skybox/Test/skyboxTest.png
-../Data/Textures/Skybox/Test/skyboxTest.png
-../Data/Textures/Skybox/Test/skyboxTest.png
-../Data/Textures/Skybox/Test/skyboxTest.png

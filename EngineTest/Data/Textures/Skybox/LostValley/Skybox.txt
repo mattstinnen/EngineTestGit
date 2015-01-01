@@ -1,7 +1,0 @@
-[Skybox_Data]
-../Data/Textures/Skybox/LostValley/skyboxFront.png
-../Data/Textures/Skybox/LostValley/skyboxTop.png
-../Data/Textures/Skybox/LostValley/skyboxBottom.png
-../Data/Textures/Skybox/LostValley/skyboxRight.png
-../Data/Textures/Skybox/LostValley/skyboxLeft.png
-../Data/Textures/Skybox/LostValley/skyboxBack.png

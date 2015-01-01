@@ -1,7 +1,0 @@
-[Skybox_Data]
-../Data/Textures/Skybox/Mountain1/skyboxFront.png
-../Data/Textures/Skybox/Mountain1/skyboxTop.png
-../Data/Textures/Skybox/Mountain1/skyboxBottom.png
-../Data/Textures/Skybox/Mountain1/skyboxRight.png
-../Data/Textures/Skybox/Mountain1/skyboxLeft.png
-../Data/Textures/Skybox/Mountain1/skyboxBack.png
