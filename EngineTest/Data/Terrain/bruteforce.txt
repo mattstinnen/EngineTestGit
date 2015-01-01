@@ -1,0 +1,8 @@
+[TERRAIN_DATA]
+CellSpacing: 2.0
+MaxHeight: 40.0
+HeightMap: heightmap2.jpg
+TextureTile: sand2.png
+TextureTile2: grass.png
+AlphaMap: alphaMap2.png
+TileCount: 4
