@@ -211,8 +211,7 @@ void Skybox::Render(IDirect3DDevice9* pDevice)
 	pDevice->SetTransform(D3DTS_VIEW,(D3DXMATRIX*)&matView); // reset the view matrix so other things can move
 	pDevice->SetRenderState(D3DRS_ZENABLE,true);			 // re-enable the z buffer
 	pDevice->SetRenderState(D3DRS_ZWRITEENABLE,true);
-	pDevice->SetRenderState(D3DRS_LIGHTING,true);
-	
+	pDevice->SetRenderState(D3DRS_LIGHTING,true);//reset lighting
 }
 
 }//namespace MAGE3D

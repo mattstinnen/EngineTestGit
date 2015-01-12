@@ -35,30 +35,42 @@ protected:
 	void Render();
 
 	
-
+	// core stuff
 	CORE::Timer mTimer;
 
 	Graphics::GraphicsManager	mGraphicsManager;
 	Graphics::Camera			mCamera;
 	Graphics::Font				mFont;
+	Input::InputManager		mInputManager;
+	Graphics::Skybox mSkybox;
 
+	//dx9stuff
 	D3DXHANDLE mWorldMatrixHandle;
 	D3DXHANDLE mViewMatrixHandle;
 	D3DXHANDLE mProjMatrixHandle;
 	D3DXHANDLE mViewPositionHandle;
 	D3DXHANDLE mTimerHandle;
-	
-
-	float mRotation;
-
 	D3DLIGHT9 light;
-	
-	
-	bool mUseShader;
-	float mTime;
-	int techNum;
 
-	Input::InputManager		mInputManager;
+
+	// variables
+	float mRotation;
+	float mTime;
+
+	
+
+
+	// testing stuff
+	IDirect3DVertexBuffer9* mpVertexBuffer;
+	IDirect3DVertexBuffer9* mpVertexBuffer2;
+
+	Math::Matrix4 matTransform;
+	Math::Matrix4 matRotationX;
+	Math::Matrix4 matRotationY;
+	Math::Matrix4 matRotationZ;
+	Math::Matrix4 matScaleY;
+
+	LPDIRECT3DTEXTURE9 pPyramideTexture;
 };
 
 #endif // #ifndef GAME_H

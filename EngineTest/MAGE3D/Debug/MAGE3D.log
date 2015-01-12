@@ -1,35 +1,8 @@
-﻿Build started 01/01/2015 12:02:32 AM.
+﻿Build started 11/01/2015 12:35:42 PM.
      1>Project "C:\Users\Matthew\Documents\GitHub\EngineTestGit\EngineTest\MAGE3D\MAGE3D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I./ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"Precompiled.h" /Fp"Debug\MAGE3D.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Precompiled.cpp
-         Precompiled.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I./ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"Precompiled.h" /Fp"Debug\MAGE3D.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Core\Log.cpp Core\Timer.cpp Graphics\AnimatedGameObject.cpp Graphics\Camera.cpp Graphics\Font.cpp Graphics\GameObject.cpp Graphics\GraphicsManager.cpp Graphics\HeightMap.cpp Graphics\SkinnedMesh.cpp Graphics\Skybox.cpp Graphics\Sprite.cpp Graphics\StaticMeshX.cpp Graphics\TerrainBruteForce.cpp Input\InputManager.cpp Math\Math.cpp Math\Matrix4.cpp Math\Vector3.cpp Platform\Application.cpp
-         Application.cpp
-         Vector3.cpp
-         Matrix4.cpp
-         Math.cpp
-     1>c:\users\matthew\documents\github\enginetestgit\enginetest\mage3d\math\math.cpp(18): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-     1>c:\users\matthew\documents\github\enginetestgit\enginetest\mage3d\math\math.cpp(19): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-         InputManager.cpp
-         TerrainBruteForce.cpp
-         StaticMeshX.cpp
-         Sprite.cpp
-     1>c:\users\matthew\documents\github\enginetestgit\enginetest\mage3d\graphics\sprite.cpp(94): warning C4244: '=' : conversion from 'FLOAT' to 'int', possible loss of data
-     1>c:\users\matthew\documents\github\enginetestgit\enginetest\mage3d\graphics\sprite.cpp(95): warning C4244: '=' : conversion from 'FLOAT' to 'int', possible loss of data
-     1>c:\users\matthew\documents\github\enginetestgit\enginetest\mage3d\graphics\sprite.cpp(102): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\matthew\documents\github\enginetestgit\enginetest\mage3d\graphics\sprite.cpp(103): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\matthew\documents\github\enginetestgit\enginetest\mage3d\graphics\sprite.cpp(104): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I./ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"Precompiled.h" /Fp"Debug\MAGE3D.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Graphics\Skybox.cpp
          Skybox.cpp
-         SkinnedMesh.cpp
-         HeightMap.cpp
-         GraphicsManager.cpp
-         GameObject.cpp
-         Font.cpp
-         Camera.cpp
-         AnimatedGameObject.cpp
-         Timer.cpp
-         Log.cpp
-         Generating Code...
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\Matthew\Documents\GitHub\EngineTestGit\EngineTest\Debug\MAGE3D.lib" /NOLOGO Debug\Log.obj
          Debug\Timer.obj
@@ -55,4 +28,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.68
+Time Elapsed 00:00:00.34

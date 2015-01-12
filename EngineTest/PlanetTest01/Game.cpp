@@ -21,9 +21,10 @@ Game::Game()
 	,mViewPositionHandle(NULL)
 	,mTimerHandle(NULL)
 	,mTime(0.0f)
-	
 	,mRotation(0.0f)
-	,techNum(1)
+	//testing stuff
+	, mpVertexBuffer(NULL)
+	, mpVertexBuffer2(NULL)
 
 {
 	
@@ -54,10 +55,45 @@ void Game::OnInitialize()
 
 
 	//set render states
-	mGraphicsManager.Device()->SetRenderState(D3DRS_LIGHTING,false);
+	mGraphicsManager.Device()->SetRenderState(D3DRS_LIGHTING, false);
+	mGraphicsManager.Device()->SetRenderState(D3DRS_CULLMODE, true);
 	
+	//skybox
+	mSkybox.Create(mGraphicsManager.Device(), "../Data/Textures/Skybox/Clouds1/Skybox.txt");
 
+	//testing stuff
+	mGraphicsManager.Device()->CreateVertexBuffer
+		(
+		4 * sizeof(Vertex),		//buffer size bytes
+		D3DUSAGE_WRITEONLY,		// usage
+		Vertex::FVF,
+		D3DPOOL_MANAGED,		//memory pool
+		&mpVertexBuffer,		// pointer to vertex buffer interface
+		NULL					//shared handle
+		);
 
+	Vertex* pVerticies = NULL;
+	mpVertexBuffer->Lock(0, 0, (void**)&pVerticies, 0);// get buffer ready to input
+	// input positions and uvs
+	pVerticies[0].position = Math::Vector3(-1.0f, -1.0f, -1.0f);
+	pVerticies[0].u0 = 0.0f;
+	pVerticies[0].v0 = 0.0f;
+	pVerticies[1].position = Math::Vector3(-1.0f, -1.0f, 1.0f);
+	pVerticies[1].u0 = 0.0f;
+	pVerticies[1].v0 = 1.0f;
+	pVerticies[2].position = Math::Vector3(1.0f, -1.0f, -1.0f);
+	pVerticies[2].u0 = 1.0f;
+	pVerticies[2].v0 = 0.0f;
+	pVerticies[3].position = Math::Vector3(1.0f, -1.0f, 1.0f);
+	pVerticies[3].u0 = 1.0f;
+	pVerticies[3].v0 = 1.0f;
+
+	mpVertexBuffer->Unlock(); // finish input
+
+	// load in the texture
+	pPyramideTexture = NULL;
+	D3DXCreateTextureFromFile(mGraphicsManager.Device(), "../data/textures/crate.jpg", &pPyramideTexture);
+	mGraphicsManager.Device()->SetTexture(0, pPyramideTexture);
 
 }
 
@@ -72,7 +108,12 @@ void Game::OnTerminate()
 	mTimer.Terminate();
 	mFont.Terminate();
 
-	
+	//skybox
+	mSkybox.Destroy();
+
+
+	//testing stuff
+	SafeRelease(mpVertexBuffer);
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -143,29 +184,40 @@ void Game::Render()
 	
 	Math::Matrix4 matView = mCamera.GetViewMatrix();
 	Math::Matrix4 matProj = mCamera.GetProjectionMatrix();
-
-	
-	
 	Math::Vector3 camPosition(mCamera.GetPosition());
 	D3DXVECTOR4 viewPosition(camPosition.x,camPosition.y,camPosition.z,1.0f);
 
+
+	pDevice->SetTransform(D3DTS_VIEW, (D3DXMATRIX*)&matView);
+	pDevice->SetTransform(D3DTS_PROJECTION, (D3DXMATRIX*)&matProj);
 
 	// begin render
 	pDevice->Clear(0,NULL,D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER | D3DCLEAR_STENCIL , 0x00000000, 1.0f, 0);
 	pDevice->BeginScene();
 
-	// all rendering goes here
+	
 	//set world transform
 	Math::Matrix4 matWorld;
 	matWorld.SetIdentity();
 	matWorld.SetRotateY(mRotation);
+	
+	
+	// all rendering goes here
+	//skybox
+	mSkybox.Render(pDevice);
+	
+	//testing stuff
+	mGraphicsManager.Device()->SetTexture(0, pPyramideTexture);
+	pDevice->SetRenderState(D3DRS_LIGHTING, false);
+	pDevice->SetStreamSource(0, mpVertexBuffer, 0, sizeof(Vertex));
+	pDevice->SetFVF(Vertex::FVF);
+	pDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
 
+
+	//fps
 	char buffer[kMaxStringSize];
 	sprintf_s(buffer, kMaxStringSize, "FPS: %.2f", mTimer.GetFramesPerSecond());
-	
-	
 	mFont.PrintText(buffer);
-
 	// end render
 
 	pDevice->EndScene();
